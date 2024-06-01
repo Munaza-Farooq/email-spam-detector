@@ -1,0 +1,78 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url('https://source.unsplash.com/1600x900/?abstract,background') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    color: #fff;
+}
+
+.container {
+    background-color: rgba(0, 0, 128, 0.7); 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 0px #000;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+textarea {
+    width: calc(100% - 60px); 
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    resize: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+    background-color: #fff;
+    color: #000;
+}
+
+textarea:focus {
+    border-color: #007BFF;
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.result-box {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px #000;
+}
+
+h2 {
+    font-weight: 400;
+    color: #fff; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 10px;
+    border-radius: 5px;
+}

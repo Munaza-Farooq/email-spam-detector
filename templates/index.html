@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Spam Classification using Naive Bayes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        
+        .graph-images {
+            display: none; 
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .graph-images img {
+            max-width: 100%; 
+            margin-top: 20px; 
+        }
+
+        .show-graphs-button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            margin-top: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Spam Classification using Naive Bayes</h1>
+        <form method="POST" action="/predict">
+            <textarea name="message" rows="10" placeholder="Enter your email message here..."></textarea>
+            <button type="submit">Predict</button>
+        </form>
+        {% if prediction %}
+            <div class="result-box">
+                <h2>Prediction: {{ prediction }}</h2>
+            </div>
+        {% endif %}
+        <div class="graph-images">
+            <img src="static\CorrelationMatrix.png" alt="Correlation Matrix">
+            <img src="static\LearningCurve.png" alt="Learning Curve">
+            <img src="static\ConfusionMatrix.png" alt="Confusion Matrix">
+            <img src="static\ScatterPlotMatrix.png" alt="Scatter Plot Matrix">
+            <img src="static\FeatureDistribution.png" alt="Feature Distribution">
+            <img src="static\DecisionBoundary.png" alt="Decision Boundary">
+        </div>
+        <button class="show-graphs-button" onclick="showGraphs()">Show Graphs</button>
+    </div>
+
+    <script>
+        function showGraphs() {
+            var graphsDiv = document.querySelector('.graph-images');
+            var button = document.querySelector('.show-graphs-button');
+            if (graphsDiv.style.display === 'none') {
+                graphsDiv.style.display = 'block'; 
+                button.textContent = 'Hide Graphs'; 
+            } else {
+                graphsDiv.style.display = 'none'; 
+                button.textContent = 'Show Graphs'; 
+            }
+        }
+    </script>
+</body>
+</html>
